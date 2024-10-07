@@ -1,4 +1,4 @@
-import POJO.UserData;
+import pojo.UserData;
 import apisteps.UserApi;
 import io.qameta.allure.Description;
 import io.qameta.allure.restassured.AllureRestAssured;
@@ -13,7 +13,6 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class NewUserApiTests {
 
-    private final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private UserApi userApi;
     public String newUserEmail = "dddddeddaas@yandex.ru";
     public String emailNotPassword = "iamgdoxgfdetteggfod@yandex.ru";
@@ -23,7 +22,7 @@ public class NewUserApiTests {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = BASE_URL;
+        RestAssured.baseURI = UserApi.baseUrl;
         RestAssured.filters(new AllureRestAssured());
         userApi = new UserApi();
     }

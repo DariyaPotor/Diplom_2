@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import POJO.*;
+import pojo.*;
 import apisteps.*;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -13,7 +13,6 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class LoginUserApiTests {
 
-    private final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private UserApi userApi;
     public String newUserEmail = "dddddeddaas@yandex.ru";
     public String incorrectUserEmail = "dddddedda@yandex.ru";
@@ -24,7 +23,7 @@ public class LoginUserApiTests {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = BASE_URL;
+        RestAssured.baseURI = UserApi.baseUrl;
         RestAssured.filters(new AllureRestAssured());
         userApi = new UserApi();
         UserData userData = new UserData(newUserEmail, newUserPassword, newUserName);

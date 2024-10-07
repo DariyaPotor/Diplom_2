@@ -13,6 +13,8 @@ import static org.apache.commons.lang3.RandomUtils.nextInt;
 
 public class OrderApi {
 
+    private static final String INGREDIENTS_PATH = "api/ingredients";
+
     public List<String> ingredients;
 
     public OrderApi(List<String> ingredients) {
@@ -40,7 +42,7 @@ public class OrderApi {
     public static ValidatableResponse fetchIngredientsResponse() {
         return given()
                 .when()
-                .get("https://stellarburgers.nomoreparties.site/api/ingredients")
+                .get(INGREDIENTS_PATH)
                 .then()
                 .statusCode(200);
     }

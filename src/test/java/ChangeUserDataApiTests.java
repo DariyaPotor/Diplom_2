@@ -1,4 +1,4 @@
-import POJO.UserData;
+import pojo.UserData;
 import apisteps.UserApi;
 import io.qameta.allure.Description;
 import io.qameta.allure.restassured.AllureRestAssured;
@@ -12,7 +12,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class ChangeUserDataApiTests {
 
-    private final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private UserApi userApi;
     public String userEmail = "dddddeddaas@yandex.ru";
     public String userName = "Magomed";
@@ -21,7 +20,7 @@ public class ChangeUserDataApiTests {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = BASE_URL;
+        RestAssured.baseURI = UserApi.baseUrl;
         RestAssured.filters(new AllureRestAssured());
         userApi = new UserApi();
         UserData userData = new UserData(userEmail, userPassword, userName);
@@ -41,7 +40,7 @@ public class ChangeUserDataApiTests {
     @Test
     @Description("Изменение email авторизованного пользователя")
     public void changeAuthorizedUserEmail() {
-        String newUserEmail = "meou@mail.ru";
+        String newUserEmail = "meouuuuuu@mail.ru";
         UserData userData = new UserData(newUserEmail, userPassword, userName);
         userApi.changeAuthorizedUserData(userData, userAccessToken)
                 .then()

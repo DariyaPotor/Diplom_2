@@ -1,12 +1,13 @@
 package apisteps;
 
-import POJO.UserData;
+import pojo.UserData;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class UserApi {
+    public static final String baseUrl = "https://stellarburgers.nomoreparties.site";
     private static final String USER_REGISTER_PATH = "api/auth/register";
     private static final String USER_DELETE_PATH = "api/auth/user";
     private static final String USER_LOGIN_PATH = "api/auth/login";
