@@ -40,7 +40,7 @@ public class ChangeUserDataApiTests {
     @Test
     @Description("Изменение email авторизованного пользователя")
     public void changeAuthorizedUserEmail() {
-        String newUserEmail = "meouuuuuu@mail.ru";
+        String newUserEmail = "meouuuuuuuuuuu@mail.ru";
         UserData userData = new UserData(newUserEmail, userPassword, userName);
         userApi.changeAuthorizedUserData(userData, userAccessToken)
                 .then()
