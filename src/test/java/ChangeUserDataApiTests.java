@@ -20,7 +20,7 @@ public class ChangeUserDataApiTests {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = UserApi.baseUrl;
+        RestAssured.baseURI = UserApi.BASE_URL;
         RestAssured.filters(new AllureRestAssured());
         userApi = new UserApi();
         UserData userData = new UserData(userEmail, userPassword, userName);

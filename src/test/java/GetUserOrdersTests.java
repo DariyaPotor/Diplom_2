@@ -24,7 +24,7 @@ public class GetUserOrdersTests {
     @Before
     public void setUp() {
 // регистрация пользователя
-        RestAssured.baseURI = UserApi.baseUrl;
+        RestAssured.baseURI = UserApi.BASE_URL;
         RestAssured.filters(new AllureRestAssured());
         userApi = new UserApi();
         UserData userData = new UserData(userEmail, userPassword, userName);

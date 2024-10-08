@@ -12,7 +12,7 @@ public class UserData {
     private boolean success;
 
     public UserData(String email, String password, String name){
-        this.email= email;
+        this.email = email;
         this.password = password;
         this.name = name;
     }
